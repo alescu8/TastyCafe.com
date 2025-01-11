@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Café</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0ebe1;
+            color: #3e2723;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6d4c41, #3e2723);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #5d4037;
+        }
+
+        .product-info .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4e342e;
+        }
+
+        
+        .product-info button {
+            background-color: #6d4c41;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-info button:hover {
+            background-color: #4e342e;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #3e2723;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .description {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #6d4c41;
+            border-radius: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tasty Café</h1>
+        <p>Descubre el sabor perfecto en cada taza</p>
+    </header>
+
+    <div class="container">
+        <div class="product">
+            <img src="images/CAFEGRANOS.png" alt="Café en granos">
+            <div class="product-info">
+                <h3>Café en Granos</h3>
+
+
+
+
+                <p class="grams">250 gr</p>
+
+
+
+
+                <p class="price">S/15.00</p>
+                <button onclick="toggleDescription('desc-espresso')">Ver más</button>
+                <div class="description" id="desc-espresso">
+                    <p>Granos 100% seleccionados para garantizar el máximo frescor y aroma. Perfecto para los amantes del café artesanal. ¡Muele, prepara y disfruta!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/PASARCAFE.png" alt="Café para pasar">
+            <div class="product-info">
+                <h3>Café para Pasar</h3>
+                
+
+
+
+                <p class="grams">250 gr</p>
+
+
+                
+
+                <p class="price">S/15.00</p>
+                <button onclick="toggleDescription('desc-latte')">Ver más</button>
+                <div class="description" id="desc-latte">
+                    <p>Un café suave y equilibrado, ideal para quienes disfrutan de la preparación tradicional. La elección perfecta para cada día.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="images/FILTRANTE.png" alt="Café filtrante">
+            <div class="product-info">
+                <h3>Café Filtrante</h3>
+                
+
+
+
+                <p class="grams">12 un</p>
+
+
+                
+
+                <p class="price">S/10.00</p>
+                <button onclick="toggleDescription('desc-americano')">Ver más</button>
+                <div class="description" id="desc-americano">
+                    <p>Disfruta de un café delicioso y práctico en cualquier momento y lugar. Solo añade agua caliente y déjate llevar por su sabor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tienda de Café. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleDescription(id) {
+            const desc = document.getElementById(id);
+            desc.style.display = desc.style.display === 'none' || desc.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
+
